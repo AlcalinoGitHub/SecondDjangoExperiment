@@ -16,12 +16,22 @@
                 <form action = '' method = 'post'>
                     {% csrf_token %}<br>
                     <input type = 'text' name = 'Title' placeholder="Task Title"><br>
-                    <input type = '' name = 'Description' placeholder="Task Description"><br>
+                    <input type = 'text' name = 'Description' placeholder="Task Description"><br>
                     <input type = 'date' name = 'DueDate'><br>
                     <input type = 'submit'>
             </div>
             </form>
+            {% for message in messages %}
+            <h3> {{message}} </h3>
+            {% endfor %}
         </div>
+    </div>
+    <div class = 'boxTask'>
+        {% for task in tareas %}
+        <div class = 'task'>
+            {{task.Title}}<br>  {{task.Description}} <br> {{task.DueDate}}
+        </div> <br>
+        {% endfor %}
     </div>
 </body>
 </html>
