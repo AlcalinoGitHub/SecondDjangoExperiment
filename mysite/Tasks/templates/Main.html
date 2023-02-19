@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <div><h1>Tasks</h1></div>
+    <div>
+        <div class = 'box'>
+            <h2>Create a Task </h2><br>
+            <div class = 'create'>
+                <form action = '' method = 'post'>
+                    {% csrf_token %}<br>
+                    <input type = 'text' name = 'Title' placeholder="Task Title"><br>
+                    <input type = '' name = 'Description' placeholder="Task Description"><br>
+                    <input type = 'date' name = 'DueDate'><br>
+                    <input type = 'submit'>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
