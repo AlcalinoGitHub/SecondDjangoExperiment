@@ -12,7 +12,7 @@ def main(request):
         try:
             NewTask = Task.objects.create(Title = Title, Description = Description, DueDate = Date, Owner = request.user)
             NewTask.save()
-            messages.info(request, f'Task {Title} has been created')
+            messages.info(request, f'Task \'{Title}\' has been created')
             return redirect('/tasks/')
         except:
             messages.info(request, 'Fields cant be empty')
