@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MainPage',
-    'Accounts'
+    'Accounts',
+    'Tasks'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\MainPage\static')
+]
