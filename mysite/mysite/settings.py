@@ -129,5 +129,6 @@ import os
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\MainPage\static'),
     os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\Tasks\static'),
-    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\Accounts\static')
+    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\Accounts\static'),
+
 ]
