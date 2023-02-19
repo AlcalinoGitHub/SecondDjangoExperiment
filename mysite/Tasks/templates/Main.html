@@ -16,7 +16,7 @@
                 <form action = '' method = 'post'>
                     {% csrf_token %}<br>
                     <input type = 'text' name = 'Title' placeholder="Task Title"><br>
-                    <input type = 'text' name = 'Description' placeholder="Task Description"><br>
+                    <textarea id = 'Description' name = 'Description' placeholder="Task Description"></textarea> <br>
                     <input type = 'date' name = 'DueDate'><br>
                     <input type = 'submit'>
             </div>
@@ -29,7 +29,16 @@
     <div class = 'boxTask'>
         {% for task in tareas %}
         <div class = 'task'>
-            {{task.Title}}<br>  {{task.Description}} <br> {{task.DueDate}}
+            {{task.Title}}<br>  {{task.Description}} <br> {{task.DueDate}}<br>
+
+            <form action="{% url 'delete' %}" method="post">
+                {% csrf_token %}
+                <div class='delete'>
+                    <input type="hidden" name="task_id" value="{{ task.id }}">
+                    <input type='submit' name='Delete' value='Delete' class='delete'>
+                </div>
+            </form>
+
         </div> <br>
         {% endfor %}
     </div>

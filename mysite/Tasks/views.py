@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from Tasks.models import Task
 from django.contrib import messages
+
 # Create your views here.
 
 def main(request):
@@ -20,3 +21,11 @@ def main(request):
         Data = Task.objects.filter(Owner = request.user)
         context = {'tareas': Data}
         return render(request, 'Main.html', context)
+    
+def delete(request):
+    if request.method == 'POST':
+        taskID = request.POST.get('task_id')
+        task = Task.objects.get(id = taskID)
+        task.delete()
+        print(taskID)
+        return redirect('/tasks/')
